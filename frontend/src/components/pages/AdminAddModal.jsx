@@ -71,7 +71,7 @@ const AdminAddModal = () => {
   const fetchCategories = async () => {
     try {
       // Assuming you have a GET route for categories
-      const res = await fetch("http://localhost:5000/api/category");
+      const res = await fetch("https://winkit-6fzf.onrender.com/api/category");
       const data = await res.json();
       if (data.success || Array.isArray(data)) {
         // Adjust depending on if your API returns { success: true, data: [] } or just []
@@ -115,8 +115,8 @@ const AdminAddModal = () => {
 
     const endpoint =
       activeTab === "category"
-        ? "http://localhost:5000/api/category"
-        : "http://localhost:5000/api/products";
+        ? "https://winkit-6fzf.onrender.com/api/category"
+        : "https://winkit-6fzf.onrender.com/api/products";
 
     const payload = activeTab === "category" ? catFormData : prodFormData;
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { X, MapPin, Home, Briefcase, Plus, Trash2, Edit3, Navigation, Check } from "lucide-react";
 import "../css/AddressPanel.css";
 
-const API_BASE_URL = "http://localhost:5000/api/user";
+const API_BASE_URL = "https://winkit-6fzf.onrender.com/api/user";
 
 export default function AddressPanel({ open, onClose }) {
   const [addresses, setAddresses] = useState([]);

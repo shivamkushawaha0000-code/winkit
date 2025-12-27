@@ -17,7 +17,7 @@ const AllProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/products");
+      const response = await fetch("https://winkit-6fzf.onrender.com/api/products");
       const result = await response.json();
       if (result.success && result.data) {
         setProducts(result.data);
@@ -43,7 +43,7 @@ const AllProducts = () => {
     if (window.confirm("Move this product to trash?")) {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/products/${id}`,
+          `https://winkit-6fzf.onrender.com/api/products/${id}`,
           {
             method: "DELETE",
           }

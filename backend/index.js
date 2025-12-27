@@ -13,8 +13,13 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const port = process.env.PORT;
 const app = express();
 
+const corsOptions = {
+  origin: ["http://localhost:5173", "https://zapit-three.vercel.app"],
+  method: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+};
 // Middleware
-app.use(cors());  // Allow frontend requests
+app.use(cors(corsOptions)); // Allow frontend requests
 app.use(express.json());  // Parse JSON bodies
 
 // Routes

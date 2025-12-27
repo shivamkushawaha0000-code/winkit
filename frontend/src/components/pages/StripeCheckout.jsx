@@ -24,7 +24,7 @@ const CheckoutForm = ({ amount, items, address, onSuccess }) => {
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "http://localhost:5173/confirm-order",
+        return_url: "https://winkit-frontend.vercel.app/confirm-order",
       },
       redirect: "if_required", // Important: Prevents redirect if not needed
     });
@@ -36,7 +36,7 @@ const CheckoutForm = ({ amount, items, address, onSuccess }) => {
       // Payment successful!
       try {
         const response = await fetch(
-          "http://localhost:5000/api/payment/confirm-order",
+          "https://winkit-6fzf.onrender.com/api/payment/confirm-order",
           {
             method: "POST",
             headers: {
@@ -101,7 +101,7 @@ const StripeWrapper = ({ amount, items, address, onSuccess }) => {
 
   React.useEffect(() => {
     // Fetch the clientSecret from backend
-    fetch("http://localhost:5000/api/payment/create-payment-intent", {
+    fetch("https://winkit-6fzf.onrender.com/api/payment/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FiPhone, FiLock, FiX, FiArrowLeft } from "react-icons/fi";
 import "../css/LoginModal.css";
 
-const API_BASE_URL = "http://localhost:5000/api/auth";
+const API_BASE_URL = "https://winkit-6fzf.onrender.com/api/auth";
 
 export default function LoginModal({ open, onClose, onLoginSuccess }) {
   const [step, setStep] = useState("PHONE"); // PHONE or OTP

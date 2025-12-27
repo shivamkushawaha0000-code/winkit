@@ -32,7 +32,7 @@ const AdminProduct = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/category");
+        const res = await fetch("https://winkit-6fzf.onrender.com/api/category");
         const data = await res.json();
         if (data.success || Array.isArray(data)) {
           setExistingCategories(data.categories || data);
@@ -60,7 +60,7 @@ const AdminProduct = () => {
     setStatus({ type: "", message: "" });
 
     try {
-      const url = isEditMode ? `http://localhost:5000/api/products/${productToEdit._id}` : "http://localhost:5000/api/products";
+      const url = isEditMode ? `https://winkit-6fzf.onrender.com/api/products/${productToEdit._id}` : "https://winkit-6fzf.onrender.com/api/products";
       const method = isEditMode ? "PUT" : "POST";
 
       const response = await fetch(url, {

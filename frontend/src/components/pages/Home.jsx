@@ -27,7 +27,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         // A. Fetch Home Config (Banners & Categories)
-        const homeRes = await fetch("http://localhost:5000/api/home");
+        const homeRes = await fetch("https://winkit-6fzf.onrender.com/api/home");
         const homeResult = await homeRes.json();
 
         if (homeResult.success) {
@@ -37,7 +37,7 @@ const Home = () => {
         }
 
         // B. NEW: Fetch All Products
-        const prodRes = await fetch("http://localhost:5000/api/products");
+        const prodRes = await fetch("https://winkit-6fzf.onrender.com/api/products");
         const prodResult = await prodRes.json();
         if (prodResult.success) {
           setProducts(prodResult.data);

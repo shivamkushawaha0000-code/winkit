@@ -93,7 +93,7 @@ const Navbar = ({ showLogin, setShowLogin, user, handleLogout }) => {
       }
       try {
         const response = await fetch(
-          `http://localhost:5000/api/products?search=${searchTerm}`
+          `https://winkit-6fzf.onrender.com/api/products?search=${searchTerm}`
         );
         const result = await response.json();
         if (result.success) {
@@ -202,7 +202,7 @@ const Navbar = ({ showLogin, setShowLogin, user, handleLogout }) => {
     setIsCheckingAddress(true);
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/user/profile", {
+      const res = await fetch("https://winkit-6fzf.onrender.com/api/user/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

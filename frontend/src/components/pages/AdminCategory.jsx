@@ -45,7 +45,7 @@ const AdminCategory = () => {
     setStatus({ type: "", message: "" });
 
     try {
-      const response = await fetch("http://localhost:5000/api/category", {
+      const response = await fetch("https://winkit-6fzf.onrender.com/api/category", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(catFormData),

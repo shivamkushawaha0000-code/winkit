@@ -26,7 +26,7 @@ const ProductDetail = () => {
     const fetchProductData = async () => {
       setLoading(true);
       try {
-        const prodRes = await fetch(`http://localhost:5000/api/products/${id}`);
+        const prodRes = await fetch(`https://winkit-6fzf.onrender.com/api/products/${id}`);
         const prodResult = await prodRes.json();
 
         if (prodResult.success) {
@@ -38,7 +38,7 @@ const ProductDetail = () => {
               ? currentProduct.category._id 
               : currentProduct.category;
 
-            const suggRes = await fetch(`http://localhost:5000/api/products?categoryId=${catId}`);
+            const suggRes = await fetch(`https://winkit-6fzf.onrender.com/api/products?categoryId=${catId}`);
             const suggResult = await suggRes.json();
 
             if (suggResult.success) {

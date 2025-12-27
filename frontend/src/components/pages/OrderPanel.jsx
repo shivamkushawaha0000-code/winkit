@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { X, Package, Calendar, ChevronRight, ShoppingBag } from "lucide-react";
 import "../css/OrderPanel.css";
 
-const API_BASE_URL = "http://localhost:5000/api/orders";
+const API_BASE_URL = "https://winkit-6fzf.onrender.com/api/orders";
 
 export default function OrderPanel({ open, onClose }) {
   const [orders, setOrders] = useState([]);
