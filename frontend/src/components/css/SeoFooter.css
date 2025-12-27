@@ -1,0 +1,89 @@
+/* src/components/css/SeoFooter.css */
+
+.seo-footer-container {
+  background-color: #ffffff;
+  /* Add a separator line above the footer */
+  border-top: 1px solid #f0f0f0; 
+  margin-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  color: #666;
+  width: 100%;
+}
+
+/* --- Section 1: Dynamic Text --- */
+.seo-category-desc {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.seo-category-desc h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+}
+
+.seo-category-desc p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #828282;
+  margin-bottom: 12px;
+}
+
+/* --- Section 2: Category List --- */
+.seo-links-section {
+  width: 100%;
+}
+
+.seo-links-section h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.seo-cat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to next line */
+  gap: 12px;       /* Space between pills */
+}
+
+/* Pill/Chip Style Links */
+.seo-cat-list li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 13px;
+  background-color: #f3f4f6; /* Light gray background */
+  padding: 8px 16px;
+  border-radius: 24px;       /* Fully rounded corners */
+  display: inline-block;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+/* Hover Effect */
+.seo-cat-list li a:hover {
+  background-color: #fff;
+  border-color: #3F51B5; /* Brand Green border */
+  color: #3F51B5;        /* Brand Green text */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .seo-cat-list {
+    gap: 8px;
+  }
+  .seo-cat-list li a {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

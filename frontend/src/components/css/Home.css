@@ -1,0 +1,204 @@
+/* css/Home.css */
+
+/* --- Global Container --- */
+.home-container {
+  background-color: #fcfcfc;
+  /* min-height: 100vh; */
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  /* padding-bottom: 20px; */
+  display: flex;
+  flex-direction: column;
+  /* margin-top: auto; */
+}
+
+.main-content-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px;
+  width: 100%;
+  flex: 1;
+}
+
+/* --- First Banner (Hero) --- */
+.first-banner {
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.first-banner-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0px;
+  display: block;
+}
+
+/* --- Second Banner (Pharmacy/Pet/Baby) --- */
+.second-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
+  gap: 16px;
+  padding: 0 13px;
+  margin-bottom: 10px;
+}
+
+.second-banner-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px; /* Smooth rounded corners */
+}
+
+.second-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Subtle zoom effect on hover */
+/* .second-banner-link:hover .second-banner-img {
+    transform: scale(1.03);
+} */
+
+/* --- Category Cards Grid --- */
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0px;
+}
+
+.category-card {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.category-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect for categories */
+.category-card:hover .category-card-img {
+  transform: translateY(-4px); 
+  filter: brightness(1.05);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablet / Small Laptops */
+@media (max-width: 1024px) {
+  .category-cards {
+    grid-template-columns: repeat(6, 1fr); /* 6 items per row */
+  }
+}
+
+/* Mobile Devices */
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .main-content-wrapper {
+    padding: 12px;
+  }
+  .second-banner {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 0 13px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .second-banner-link {
+    width: 220px;
+    height: auto;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  .second-banner-img {
+    width: 100%;
+    /* 4. Let the image height dictate the container height */
+    height: auto;
+
+    /* Optional: This ensures it looks good even if you add a fixed height later */
+    object-fit: cover;
+    border-radius: 12px;
+    display: block; /* Removes tiny bottom gap typical with images */
+  }
+  /* Category Grid on Mobile */
+  .category-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+}
+/* Very Small Mobiles */
+@media (max-width: 480px) {
+  .category-cards {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  }
+
+  .first-banner-img {
+    border-radius: 8px; /* Add curve on mobile to separate from header */
+  }
+  .second-banner {
+    padding: 0;
+  }
+  .second-banner-link {
+    /* 1. Stick to the 300px width you wanted */
+    width: 200px;
+
+    /* 2. REMOVE fixed height. Use 'auto' so the box adjusts to the image */
+    height: auto;
+
+    /* 3. Prevent shrinking */
+    flex-shrink: 0;
+    display: block;
+  }
+}
+/* New Home Product Sections */
+.home-products-section {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.category-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.category-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin-left: 5px; /* Align slightly with grid */
+}
+
+/* Grid for products - matches your existing card style */
+.products-horizontal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .products-horizontal-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
+    gap: 10px;
+  }
+  .category-title {
+    font-size: 18px;
+    margin-left: 0;
+  }
+}

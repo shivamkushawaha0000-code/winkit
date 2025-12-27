@@ -1,0 +1,163 @@
+/* src/components/css/ProductCard.css */
+
+.product-card {
+  background: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.2s ease;
+  height: 100%; /* Ensures equal height in grid */
+  position: relative;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #dcdcdc;
+}
+
+/* --- Image Area --- */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 130px; /* Fixed height for consistency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.delivery-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #edf2f7;
+  font-size: 10px;
+  font-weight: 700;
+  color: #363636;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.discount-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #256fef;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* --- Details Area --- */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f1f1f;
+  margin: 0 0 4px 0;
+  line-height: 1.4;
+  
+  /* Truncate text after 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 36px; /* Fixed height for 2 lines */
+}
+
+.product-weight {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+/* --- Price & Action --- */
+.price-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto; /* Pushes this to bottom */
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-price {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.mrp {
+  font-size: 11px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* --- Add Button / Counter --- */
+.add-btn-container {
+  width: 70px;
+  height: 32px;
+}
+
+.add-btn {
+  width: 100%;
+  height: 100%;
+  background-color: #f7fff9;
+  border: 1px solid #3F51B5;
+  color: #3F51B5;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #3F51B5;
+  color: white;
+}
+
+/* Counter Style (- 1 +) */
+.qty-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3F51B5;
+  color: white;
+  border-radius: 6px;
+  height: 100%;
+  padding: 0 5px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.qty-counter button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 5px;
+}

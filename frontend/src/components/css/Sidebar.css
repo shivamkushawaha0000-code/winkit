@@ -1,0 +1,87 @@
+/* Sidebar Container */
+.sidebar-wrapper {
+  width: 100%;
+  background: #fff;
+  padding-bottom: 20px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual Item styling */
+.category-item {
+  display: flex;
+  flex-direction: column; /* Stacks Image on top of Text */
+  align-items: center;    /* Centers content horizontally */
+  justify-content: center;
+  padding: 15px 5px;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0; /* Subtle separator like the image */
+  transition: all 0.2s;
+  min-height: 100px; /* Ensures uniform height */
+  position: relative;
+}
+
+/* INACTIVE STATE (Default) */
+.category-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* ACTIVE STATE - Matches the image style */
+.category-item.active {
+  background-color: #f0fdf4; /* Very light green background */
+  color: #1f1f1f;
+  font-weight: 700;
+}
+
+/* The Green Indicator Line on the left */
+.category-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #3F51B5; 
+  border-radius: 0 4px 4px 0;
+}
+
+/* Image Styling */
+.cat-img-box {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures image doesn't stretch */
+}
+
+/* Text Styling */
+.cat-name {
+  font-size: 10px;
+  line-height: 1.3;
+  color: #4a4a4a;
+  max-width: 90%;
+}
+
+.category-item.active .cat-name {
+  color: #3F51B5;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .sidebar-wrapper {
+    display: none;
+  }
+}

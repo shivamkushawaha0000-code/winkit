@@ -1,0 +1,727 @@
+/* src/components/css/Navbar.css */
+
+/* --- General Settings --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+/* --- Backdrop (Dark overlay when searching) --- */
+.search-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 499;
+  backdrop-filter: blur(3px);
+  cursor: default;
+}
+
+/* 1. Logo Styling */
+.brand-logo {
+  font-size: 28px;
+  font-weight: 700;
+  margin-right: 20px;
+  display: flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+.wink {
+  color: #0C831F;
+}
+.it {
+  color: #3F51B5;
+}
+
+/* 2. Location Styling */
+.location-box {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  min-width: 160px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.delivery-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+}
+
+.location-subtitle {
+  font-size: 13px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+
+.arrow-icon {
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+/* 3. Search Bar Styling */
+.search-container {
+  flex-grow: 1;
+  max-width: 600px;
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  height: 48px;
+  padding: 0 15px;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-box:focus-within {
+  background-color: #fff;
+  border-color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+  color: #666;
+  font-size: 18px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 15px;
+  color: #333;
+  height: 100%;
+}
+
+.clear-search-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+.clear-search-btn:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* Suggestions Dropdown */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.1s; /* Faster transition for keyboard nav */
+}
+
+/* Hover OR Active via Keyboard */
+.suggestion-item:hover,
+.suggestion-item.active {
+  background-color: #cfd2d57d; /* Light gray highlight */
+}
+
+.suggestion-icon {
+  color: #888;
+  margin-right: 12px;
+  font-size: 16px;
+}
+.suggestion-text {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+.suggestion-category {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}
+
+/* 4. Cart & Login Styling */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* --- UNIFIED BUTTON STYLES (Login & Profile) --- */
+.profile-container {
+  position: relative;
+}
+
+/* --- MATCHING PROFILE BUTTON TO CART --- */
+.profile-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 45px;
+  padding: 0 16px;
+  /* Updated Radius to Match Cart Button */
+  border-radius: 30px;
+  /* Updated Colors to Match Cart Button Default */
+  background-color: #3F51B5;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.profile-link{
+  color: #666;
+  margin-top: 6px;
+}
+.profile-link:hover{
+  color: #3F51B5;
+}
+.profile-icon-btn:hover {
+  background-color: #2438a7;
+  border-color: #3F51B5;
+}
+
+.login-icon-mobile {
+  display: none;
+}
+
+.profile-icon-btn .arrow-icon {
+  font-size: 18px;
+  color: white;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+/* Container for the dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 280px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  z-index: 1001;
+  animation: slideInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header with Avatar */
+.profile-card-header {
+  padding: 24px 20px;
+  background: linear-gradient(135deg, #f9faff 0%, #ffffff 100%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.avatar-large {
+  width: 50px;
+  height: 50px;
+  background: #3F51B5;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
+}
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #111;
+  font-weight: 700;
+}
+
+.profile-info p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Sections & Buttons */
+.profile-section {
+  padding: 10px 0;
+}
+
+.menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.menu-item:hover {
+  background-color: #f5f7ff;
+}
+
+.item-icon {
+  width: 32px;
+  height: 32px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3F51B5;
+  transition: all 0.2s;
+}
+
+.menu-item:hover .item-icon {
+  background: #3F51B5;
+  color: white;
+}
+
+.menu-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.menu-label span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.menu-label small {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* Admin Styling */
+.admin-section {
+  background: #fff5f5;
+  border-bottom: 1px solid #fee2e2;
+}
+
+.admin-btn span {
+  color: #d32f2f !important;
+  font-weight: 700;
+}
+
+.admin-icon {
+  background: #fee2e2;
+  color: #d32f2f;
+}
+
+.arrow-right {
+  color: #d1d5db;
+}
+
+/* Footer & Logout */
+.profile-footer {
+  padding: 15px 20px 20px;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  border: 1.5px solid #fee2e2;
+  border-radius: 12px;
+  color: #d32f2f;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-btn:hover {
+  background: #d32f2f;
+  color: white;
+  border-color: #d32f2f;
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}y
+
+.profile-header {
+  padding: 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+.profile-NuLink{
+  display: flex;
+  gap: 5px;
+}
+.profile-header strong {
+  color: #111;
+  font-size: 16px;
+  font-weight: 700;
+}
+.profile-header span {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.profile-menu-item {
+  width: 100%;
+  padding: 14px 16px;
+  text-align: left;
+  background: white;
+  border: none;
+  border-bottom: 1px solid #f9f9f9;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.2s;
+  font-weight: 500;
+}
+.profile-menu-item:hover {
+  background-color: #f7f7f7;
+  color: #3F51B5;
+}
+.profile-menu-item.logout {
+  color: #d32f2f;
+  border-bottom: none;
+}
+.profile-menu-item.logout:hover {
+  background-color: #fff0f0;
+}
+
+/* --- CART BUTTON (Identical Design) --- */
+.cart-btn {
+  background-color: #3F51B5;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  height: 45px;
+  min-width: 100px;
+  transition: all 0.2s ease;
+}
+
+.cart-btn:hover {
+  background-color: #2438a7;
+  border-color: #3F51B5;
+}
+
+/* Ensure Inner Text Changes Color Too */
+.cart-btn:hover .cart-text,
+.cart-btn:hover .cart-items,
+.cart-btn:hover .cart-price {
+  color: white;
+}
+
+.cart-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.cart-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: white; /* Default white */
+  transition: color 0.2s ease;
+}
+
+.cart-items {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+}
+
+.cart-price {
+  font-size: 12px;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.floating-cart-container {
+  display: none;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 1020px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+  .header-cart-btn {
+    display: none !important;
+  }
+  .brand-logo {
+    order: 1;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  .location-box {
+    display: flex !important;
+    order: 2;
+    margin-right: auto;
+    min-width: auto;
+  }
+  .nav-right {
+    order: 3;
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  /* Row 2: Search Bar */
+  .search-container {
+    order: 4;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    flex-basis: 100%;
+  }
+  .search-box {
+    background-color: #f0f0f0;
+  }
+
+  /* --- Mobile Profile/Login Button (Circle) --- */
+  .profile-icon-btn {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Circle on Mobile */
+    background-color: #3F51B5;
+    color: white;
+    border: 1px solid transparent;
+  }
+
+  .profile-icon-btn .arrow-icon {
+    display: none;
+  }
+  .login-text-desktop {
+    display: none;
+  }
+  .login-icon-mobile {
+    display: block;
+  }
+
+  /* Floating Cart */
+  .floating-cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 600px;
+    background-color: #3F51B5;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+  }
+  .floating-cart-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .floating-cart-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .floating-items {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.9;
+  }
+  .floating-price {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .floating-cart-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+    height: auto;
+    gap: 10px;
+  }
+  .brand-logo {
+    display: none;
+  }
+}
+@media (max-width: 455px) {
+  .delivery-title {
+    font-size: 12px;
+  }
+  .location-subtitle {
+    font-size: 10px;
+    max-width: 260px;
+  }
+  .arrow-icon{
+    margin-top: 0;
+  }
+}
+/* --- TOAST NOTIFICATION STYLES (Responsive) --- */
+
+/* Toast Notification Container */
+.toast-notification {
+  position: fixed;
+  top: 90px; /* Desktop position */
+  right: 20px;
+  background-color: white;
+  z-index: 100000; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  
+  /* Desktop Sizing */
+  min-width: 280px;
+  max-width: 400px;
+
+  animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.toast-content {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+
+.toast-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Quicksand";
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.toast-close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.toast-progress-track {
+  width: 100%;
+  height: 5px;
+  background-color: #e8f5e9;
+}
+
+.toast-progress-bar {
+  height: 100%;
+  background-color: #3F51B5;
+  width: 100%;
+  border-radius: 0 4px 4px 0;
+  animation: shrinkWidth 5s linear forwards;
+}
+
+@keyframes shrinkWidth {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* --- MOBILE RESPONSIVE TWEAKS --- */
+@media (max-width: 600px) {
+  .toast-notification {
+    /* Move it up slightly for mobile screens */
+    top: 75px;
+    
+    /* Make it stretch across the width of the phone */
+    left: 15px;
+    right: 15px;
+    
+    /* Reset width constraints */
+    min-width: auto;
+    width: auto;
+    max-width: none;
+  }
+}

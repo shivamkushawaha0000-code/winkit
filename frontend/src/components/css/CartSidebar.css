@@ -1,0 +1,258 @@
+/* Overlay (Dark Background) */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.cart-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sidebar Drawer */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Hidden by default */
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  background-color: #f4f6fb; /* Light gray bg */
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+/* Header */
+.cart-header {
+  background-color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Body (Scrollable) */
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+/* Empty State */
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.empty-img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.empty-cart h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1f1f1f;
+}
+
+.empty-cart p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.start-shopping-btn {
+  background-color: #3F51B5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Cart Items */
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.item-img-box {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.item-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+  color: #333;
+  line-height: 1.3;
+}
+
+.item-weight {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.item-price-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-price-action .price {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Quantity Controls in Sidebar */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  background-color: #3F51B5;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.qty-controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Bill Details */
+.bill-details {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 80px; /* Space for fixed footer */
+}
+
+.bill-details h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.bill-row.grand-total {
+  font-weight: 700;
+  color: #1f1f1f;
+  font-size: 15px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ddd;
+}
+
+.free-text {
+  color: #3F51B5;
+}
+
+/* Footer (Checkout) */
+.cart-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: #3F51B5;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-text {
+  font-size: 15px;
+}
+
+.proceed-text {
+  font-size: 14px;
+}

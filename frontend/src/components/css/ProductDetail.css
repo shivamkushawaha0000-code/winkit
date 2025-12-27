@@ -1,0 +1,257 @@
+:root {
+  --pdp-primary: #3F51B5;
+  --pdp-text: #1f1f1f;
+  --pdp-muted: #666;
+  --pdp-bg: #f8fafc;
+}
+
+.pdp-wrapper {
+  background-color: var(--pdp-bg);
+  min-height: 100vh;
+  padding: 30px 0;
+}
+
+.pdp-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* Breadcrumb */
+.pdp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--pdp-muted);
+  margin-bottom: 24px;
+}
+
+.pdp-breadcrumb a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.pdp-breadcrumb a:hover { color: var(--pdp-primary); }
+
+/* Main Layout Grid */
+.pdp-main-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+/* Media Section */
+.pdp-image-viewer {
+  background: white;
+  border: 1px solid #f1f5f9;
+  border-radius: 20px;
+  padding: 40px;
+  position: sticky;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdp-image-viewer img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.pdp-promo-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--pdp-primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* Info Section */
+.pdp-brand-label {
+  color: var(--pdp-primary);
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.pdp-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--pdp-text);
+  margin-bottom: 12px;
+}
+
+.pdp-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--pdp-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pdp-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #1e293b;
+}
+
+/* Pricing Card */
+.pdp-pricing-card {
+  margin: 30px 0;
+  padding: 24px;
+  background: #f8fafc;
+  border-radius: 16px;
+}
+
+.pdp-sale-price {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.pdp-mrp-price {
+  font-size: 16px;
+  text-decoration: line-through;
+  color: #94a3b8;
+  margin-left: 10px;
+}
+
+.pdp-tax-info {
+  font-size: 12px;
+  color: var(--pdp-muted);
+  margin-top: 4px;
+}
+
+/* Button & Counter */
+.pdp-cta-block {
+  margin-top: 20px;
+}
+
+.pdp-main-add-btn {
+  width: 50%;
+  background: #3F51B5;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.pdp-main-add-btn:hover { transform: scale(1.01); background: #2438a7; }
+
+.pdp-main-qty-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #3F51B5;
+  color: white;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.pdp-main-qty-selector button {
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.pdp-main-qty-selector span { font-weight: 800; font-size: 18px; }
+
+/* Trust Grid */
+.pdp-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.trust-icon { color: var(--pdp-primary); }
+
+.trust-item h6 { font-weight: 700; font-size: 13px; margin: 0; }
+.trust-item p { font-size: 11px; color: var(--pdp-muted); margin: 0; }
+
+/* Description */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.pdp-description-section p {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Recommendations */
+.pdp-recommendations {
+  margin-top: 60px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-header h2 { font-size: 24px; font-weight: 800; }
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--pdp-primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .pdp-main-grid { grid-template-columns: 1fr; padding: 20px; }
+  .pdp-image-viewer { position: static; padding: 20px; }
+  .pdp-title { font-size: 24px; }
+}
