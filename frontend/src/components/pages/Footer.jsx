@@ -45,10 +45,8 @@ const Footer = () => {
           </p>
           
           <div className="footer-social">
-            <a href="#" className="social-link" aria-label="Facebook"><FaFacebookF /></a>
-            <a href="#" className="social-link" aria-label="Twitter"><FaTwitter /></a>
-            <a href="#" className="social-link" aria-label="Instagram"><FaInstagram /></a>
-            <a href="#" className="social-link" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <a href="https://www.facebook.com/share/17vQ7ZDtLo/" target="_blank" className="social-link" aria-label="Facebook"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/shivamkushwaha1740" target="_blank" className="social-link" aria-label="Instagram"><FaInstagram /></a>
           </div>
         </div>
       </div>
